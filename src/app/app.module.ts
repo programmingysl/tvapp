@@ -12,23 +12,30 @@ import { ShowsComponent } from './views/shows/shows.component';
 import { EpisodesComponent } from './views/episodes/episodes.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HomeComponent } from './views/home/home.component';
+import {MatInputModule} from '@angular/material/input';
 
+import {FormsModule} from '@angular/forms';
 
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ShowsComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
