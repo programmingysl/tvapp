@@ -10,15 +10,15 @@ export class TvapiService {
   constructor(private http: HttpClient) {
 
     // api call over here
- baseUrl ='http://api.tvmaze.com/search/shows?q=';
+     // = ;
 
   }
 
+          /*firstClick() { return console.log('Clicked'); }*/
+  getShows() {
 
-  getShows(): Observable <HttpClient> {
-
-    return of(this.shows);
-
+    // return of(this.shows);
+    return this.http.get('http://api.tvmaze.com/search/shows?q=girls');
   }
 
 

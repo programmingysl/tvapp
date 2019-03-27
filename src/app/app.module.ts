@@ -8,6 +8,10 @@ import { NavComponent } from './views/nav/nav.component';
 import {HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ShowsComponent } from './views/shows/shows.component';
+import { EpisodesComponent } from './views/episodes/episodes.component';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
@@ -15,13 +19,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    ShowsComponent,
+    EpisodesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
