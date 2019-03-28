@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
-
-
-
-
-
-
+import { ShowsComponent} from '../shows/shows.component';
 
 
 @Component({
@@ -17,7 +11,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 export class NavComponent implements OnInit {
 
   title: string = 'TV MAZE';
-  // query: string = document.forms.item(0).query.value;
+  showName: string = '';
+
   constructor() { }
 
   ngOnInit() {

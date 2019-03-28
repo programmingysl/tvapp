@@ -29,7 +29,7 @@
 
   -->
   <mat-form-field>
-    <input matInput type="text" placeholder="Search Shows" [(ngModel)]='value'>
+    <input matInput type="text" placeholder="Search Shows" [(ngModel)]="showName">
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
       <mat-icon>close</mat-icon>
     </button>

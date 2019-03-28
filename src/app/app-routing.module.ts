@@ -4,12 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {ShowsComponent} from './views/shows/shows.component';
 import {EpisodesComponent} from './views/episodes/episodes.component';
 import {HomeComponent} from './views/home/home.component';
+import {NotFoundComponent} from './views/not-found/not-found.component';
 
 const routes: Routes = [
 
-  { path: 'shows/:queryShows', component: ShowsComponent },
+  { path: 'shows/:showName', component: ShowsComponent },
   { path: 'episodes/:showId', component: EpisodesComponent },
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: '**', component: NotFoundComponent}
+
 ];
 
 @NgModule({
