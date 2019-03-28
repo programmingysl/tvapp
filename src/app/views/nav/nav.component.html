@@ -1,38 +1,19 @@
-<!--<header>
-  <div class="container">
-    <a routerLink="/" class="logo">TV Maze</a>
-    <nav>
-      <ul>
-        <li>
-          <form>
-          <input type="search" name="srchShows" id="srchShows">
-        </form>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
--->
 
 <mat-toolbar>
-  <span>{{title}}</span>
 
-  <!--
 
-  <ul style="float: left">
-    <li>
-      <form name="frmsrch">
-        <input type="search" name="query" id="srchShows">
-      </form>
-    </li>
-  </ul>
+  <span><img src="../../../images/tvm-header-logo.png"></span>
+  <span style="margin: 0 auto"></span>
 
-  -->
-  <mat-form-field>
-    <input matInput type="text" placeholder="Search Shows" [(ngModel)]="showName">
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Search Shows" [(ngModel)]="showName">
+      <button mat-button *ngIf="showName" matSuffix mat-icon-button aria-label="Clear" (click)="showName=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  <button mat-button  routerLink="/shows/{{showName}}" >Search</button>
+
+
 
 </mat-toolbar>

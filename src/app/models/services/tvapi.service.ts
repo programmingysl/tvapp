@@ -16,6 +16,8 @@ export class TvapiService {
 
   /*firstClick() { return console.log('Clicked'); }*/
   getShows(showsname: string): Observable<any> {
+    console.log(this.http.get(this.baseurl + showsname));
+
     return this.http.get(this.baseurl + showsname);
   }
 

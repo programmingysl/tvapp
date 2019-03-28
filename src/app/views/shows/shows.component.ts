@@ -12,12 +12,14 @@ export class ShowsComponent implements OnInit {
 
   shows: object;
   showName: string;
+  navArg: NavComponent;
 
   constructor(private show: TvapiService, private route: ActivatedRoute) {
 
     this.route.paramMap.subscribe(params => {
 
       this.showName = params.get('showName');
+      console.log(this.showName);
     });
 
 
@@ -27,15 +29,12 @@ export class ShowsComponent implements OnInit {
 
     this.show.getShows(this.showName).subscribe((result) => {
       this.shows = result;
-      console.log(result);
 
+      return this.shows;
     });
 
 
 
 
-  }
-  getShowName() {
-    return this.showName;
   }
 }

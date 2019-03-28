@@ -6,16 +6,19 @@ import { ShowsComponent} from '../shows/shows.component';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.sass']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
 
   title: string = 'TV MAZE';
   showName: string = '';
 
+
   constructor() { }
 
   ngOnInit() {
+
+    // console.log(this.showName);
   }
 
 }
