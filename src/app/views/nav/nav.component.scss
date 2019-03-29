@@ -4,4 +4,12 @@ mat-toolbar {background-color: #3f3f3f;}
 mat-toolbar{
   height: 100px;}
 
-mat-icon{ background-color: black; border: none; color: white }
+mat-icon{ background: none; border: none; color: white; }
+
+button {
+  background: none;
+  border: none;
+}
+img {
+  max-height: 50px;
+}

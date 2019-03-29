@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { ShowsComponent} from '../shows/shows.component';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -10,15 +9,16 @@ import { ShowsComponent} from '../shows/shows.component';
 })
 export class NavComponent implements OnInit {
 
-  title: string = 'TV MAZE';
-  showName: string = '';
+  title = 'TV MAZE API';
+  showName: string;
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {}
 
 
-  constructor() { }
-
-  ngOnInit() {
-
-    // console.log(this.showName);
+  onSubmit(): void {
+    this.router.navigateByUrl('shows/' + this.showName);
   }
 
 }

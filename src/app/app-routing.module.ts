@@ -11,7 +11,7 @@ const routes: Routes = [
 
   { path: 'shows/:showName', component: ShowsComponent },
   { path: 'episodes/:showId', component: EpisodesComponent },
-  { path: '', component: NavComponent },
+  { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent}
 
 ];

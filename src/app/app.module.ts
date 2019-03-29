@@ -19,6 +19,9 @@ import {FormsModule} from '@angular/forms';
 
 import {MatIconModule} from '@angular/material/icon';
 import { NotFoundComponent } from './views/not-found/not-found.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
+import { ControllersPipe } from './controllers.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { NotFoundComponent } from './views/not-found/not-found.component';
     ShowsComponent,
     EpisodesComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ControllersPipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import { NotFoundComponent } from './views/not-found/not-found.component';
     MatToolbarModule,
     MatInputModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
 <mat-toolbar>
 
 
-  <span><img src="../../../images/tvm-header-logo.png"></span>
+  <span>{{title}}</span>
   <span style="margin: 0 auto"></span>
 
 
@@ -12,7 +12,8 @@
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
-  <button mat-button  routerLink="/shows/{{showName}}" >Search</button>
+  <button mat-flat-button color="accent" (click)="onSubmit()"><mat-icon>search</mat-icon></button>
+  <!--<button mat-flat-button color="accent" routerLink="/shows/{{showName}}"><mat-icon>search</mat-icon></button>-->
 
 
 

@@ -1,10 +1,28 @@
 
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let ashow of shows">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ ashow.show.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Premiered: {{ ashow.show.premiered}}
+      </mat-panel-description>
+      <mat-panel-description>
+        Status: {{ ashow.show.status}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!--<mat-list>
+      <mat-list-item><img [src]="ashow.show.image.medium"></mat-list-item>
+      <mat-divider [vertical]="true"></mat-divider>
+      <mat-list-item></mat-list-item>
+    </mat-list>-->
 
 
-<app-nav></app-nav>
-<ul>
-  <li *ngFor="let ashow of shows">
-  show name:  {{ ashow.show.name}}
-  </li>
-</ul>
+    <span [innerHTML]="ashow.show.summary"></span>
+    <span></span>
+  </mat-expansion-panel>
+</mat-accordion>
+
 
