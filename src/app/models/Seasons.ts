@@ -1,15 +1,14 @@
-export class Episodes {
+export class Seasons {
 
   id: number;
   url: string;
   name: string;
-  season: number;
   number: number;
-  airdate: string;
-  airtime: string;
-  runtime: number;
+  episodeorder: number;
+  premierDate: string;
+  endDate: string;
   summary: string;
-  image: object;
+  image: any;
   links: string;
 
 
@@ -17,11 +16,10 @@ export class Episodes {
     this.id = args.id;
     this.url = args.url;
     this.name = args.name;
-    this.season = args.season;
+    this.episodeorder = args.episodeorder;
     this.number = args.number;
-    this.airdate = args.airdate;
-    this.airtime = args.airtime;
-    this.runtime = args.runtime;
+    this.premierDate = args.premierDate;
+    this.endDate = args.endDate;
     this.image = (args.image) ? args.image.medium : null;
     this.summary = args.summary;
     this.links = (args._links)  ? args._links.self.href : null;

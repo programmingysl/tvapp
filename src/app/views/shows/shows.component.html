@@ -1,27 +1,41 @@
 
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let ashow of shows">
+  <mat-expansion-panel *ngFor="let show of shows">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ ashow.show.name}}
+        {{show.name}}
       </mat-panel-title>
-      <mat-panel-description>
-        Premiered: {{ ashow.show.premiered}}
+      <span style="margin: 0 auto;"><mat-panel-description>
+        Premiered: {{show.premiered}}
       </mat-panel-description>
+</span>
+      <span style="margin: 0 auto;">
       <mat-panel-description>
-        Status: {{ ashow.show.status}}
+        Status: {{show.status}}
       </mat-panel-description>
+        </span>
     </mat-expansion-panel-header>
 
-    <!--<mat-list>
-      <mat-list-item><img [src]="ashow.show.image.medium"></mat-list-item>
-      <mat-divider [vertical]="true"></mat-divider>
-      <mat-list-item></mat-list-item>
-    </mat-list>-->
+    <img [src]="show.image">
+
+    <div style="float: right">
+      <mat-list role="list" >
+        <mat-list-item role="listitem" *ngIf="show.prevEpisode"><span> Previous Episode: <b>{{show.prevEpisode.name}}</b></span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item role="listitem" *ngIf="show.nextEpisode"><span> Next Episode: <b> {{show.nextEpisode.name}} </b></span></mat-list-item>
+        <mat-divider></mat-divider>
+
+      </mat-list>
+    </div>
 
 
-    <span [innerHTML]="ashow.show.summary"></span>
-    <span></span>
+    <span [innerHTML]="show.summary"></span>
+
+    <mat-action-row>
+      <button mat-flat-button color="primary" [routerLink]="['/episodes', show.id]">Details</button>
+    </mat-action-row>
+
   </mat-expansion-panel>
 </mat-accordion>
 

@@ -19,9 +19,14 @@ import {FormsModule} from '@angular/forms';
 
 import {MatIconModule} from '@angular/material/icon';
 import { NotFoundComponent } from './views/not-found/not-found.component';
+
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import { ControllersPipe } from './controllers.pipe';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import { SeasonsComponent } from './views/seasons/seasons.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,8 @@ import { ControllersPipe } from './controllers.pipe';
     EpisodesComponent,
     HomeComponent,
     NotFoundComponent,
-    ControllersPipe
+    ControllersPipe,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,10 @@ import { ControllersPipe } from './controllers.pipe';
     FormsModule,
     MatIconModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
+    MatListModule,
+    MatCardModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

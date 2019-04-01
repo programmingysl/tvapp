@@ -9,16 +9,37 @@ import {any} from 'codelyzer/util/function';
 })
 export class TvapiService {
 
-  baseurl = 'http://api.tvmaze.com/search/shows?q=';
+  baseurl = 'http://api.tvmaze.com/';
 
 
   constructor(private http: HttpClient) {}
 
   /*firstClick() { return console.log('Clicked'); }*/
-  getShows(showsname: string): Observable<any> {
-    console.log(this.http.get(this.baseurl + showsname));
+  getShows(showsname: string): Observable<any[]> {
+    // console.log(this.http.get(this.baseurl + showsname));
 
-    return this.http.get(this.baseurl + showsname);
+    return this.http.get<any[]>(this.baseurl + 'search/shows?q=' + showsname);
+  }
+
+  getEpisodeByUrl(episodeUrl: string): Observable<any> {
+    return this.http.get(episodeUrl);
+  }
+
+// /seasons/:id/episodes
+  getEpisodes(episodeID: string): Observable <any[]> {
+
+    return this.http.get<any[]>(this.baseurl + 'seasons/' + episodeID + '/episodes');
+
+  }
+
+  getShowbyId(showId: string): Observable <any>{
+
+    return this.http.get<any>(this.baseurl + 'shows/' + showId);
+
+  }
+  getSeasons(showId: string): Observable <any> {
+
+    return this.http.get<any>(this.baseurl + 'shows/' + showId + '/seasons');
   }
 
 }
