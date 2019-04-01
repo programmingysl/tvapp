@@ -6,6 +6,7 @@ import {Episodes} from '../../models/Episodes';
 import {MatCardModule} from '@angular/material/card';
 import {ShowsComponent} from '../shows/shows.component';
 import {MatTableModule} from '@angular/material/table';
+import {Seasons} from '../../models/Seasons';
 
 
 
@@ -28,7 +29,10 @@ export class EpisodesComponent implements OnInit {
   showId: string;
   show: Shows[];
   episode: Episodes [];
-  constructor(private mazeApi: TvapiService, private route: ActivatedRoute ) {}
+  seasonId: string;
+
+  constructor(private mazeApi: TvapiService, private route: ActivatedRoute) {
+  }
 
 
   ngOnInit() {
@@ -40,21 +44,23 @@ export class EpisodesComponent implements OnInit {
     });
 
 
-
   }
 
 
   getEpisodes(): void {
-    this.mazeApi.getEpisodes(this.showId).subscribe((result) => {
+    this.mazeApi.getEpisodes(this.seasonId).subscribe((result) => {
       this.episode = [];
       result.map(
         item => {
           this.episode.push(new Episodes(item));
+         // console.log(this.episode[0]);
         }
       );
-      // this.getEpisodes();
+
     });
   }
+
+
 
   getShow(): void {
 
@@ -63,7 +69,6 @@ export class EpisodesComponent implements OnInit {
         this.show.push(new Shows(show));
       }
     );
-    }
-
+  }
 
 }
