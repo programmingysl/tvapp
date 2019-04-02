@@ -8,8 +8,8 @@ export class Episodes {
   airdate: string;
   airtime: string;
   runtime: number;
-  summary: string;
-  image: object;
+  summary: unknown;
+  image: any;
   links: string;
 
 
@@ -24,6 +24,7 @@ export class Episodes {
     this.runtime = args.runtime;
     this.image = (args.image) ? args.image.medium : null;
     this.summary = args.summary;
+    this.summary = this.summary as HTMLInputElement;
     this.links = (args._links)  ? args._links.self.href : null;
   }
 

@@ -10,6 +10,7 @@ import {any} from 'codelyzer/util/function';
 export class TvapiService {
 
   baseurl = 'http://api.tvmaze.com/';
+  seasonId: number;
 
 
   constructor(private http: HttpClient) {}
@@ -26,9 +27,9 @@ export class TvapiService {
   }
 
 // /seasons/:id/episodes
-  getEpisodes(episodeID: string): Observable <any[]> {
-
-    return this.http.get<any[]>(this.baseurl + 'seasons/' + episodeID + '/episodes');
+  getEpisodes(seasonID: number): Observable <any[]> {
+    this.seasonId = seasonID;
+    return this.http.get<any[]>(this.baseurl + 'seasons/' + seasonID + '/episodes');
 
   }
 

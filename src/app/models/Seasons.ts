@@ -1,3 +1,5 @@
+import {Episodes} from './Episodes';
+
 export class Seasons {
 
   id: number;
@@ -10,6 +12,7 @@ export class Seasons {
   summary: string;
   image: any;
   links: string;
+  episodes: Episodes;
 
 
   constructor(args?) {
@@ -25,4 +28,9 @@ export class Seasons {
     this.links = (args._links)  ? args._links.self.href : null;
   }
 
+  getEpisode(ep: Episodes) {
+    this.episodes = ep;
+  }
+
 }
+

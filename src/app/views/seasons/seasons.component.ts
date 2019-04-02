@@ -13,10 +13,12 @@ import {EpisodesComponent} from '../episodes/episodes.component';
 })
 export class SeasonsComponent implements OnInit {
 
+
   showId: string;
+  show: Shows[];
   season: Seasons [];
-  episode: Episodes [];
-  seasonId: string;
+  episodes: Episodes [];
+  seasonId: number[];
   displayedColumns: string[] = ['#', 'Name', 'Aired'];
 
   constructor(private mazeApi: TvapiService, private route: ActivatedRoute ) {}
@@ -25,15 +27,28 @@ export class SeasonsComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       this.showId = params.get('showId');
+      this.getShow();
 
 
-      this.getSeasons();
-      this.getEpisodes();
-    console.log(this.seasonId);
+      this.getSeasons(); /*
+
+      // console.log(this.showId);*/
     });
 
   }
 
+  getShow(): void {
+
+    this.mazeApi.getShowbyId(this.showId).subscribe(show => {
+        this.show = [];
+        this.show.push(new Shows(show));
+      }
+    );
+  }
+
+  getShowId(): string {
+    return this.showId;
+  }
 
   getSeasons(): void {
     this.mazeApi.getSeasons(this.showId).subscribe((result) => {
@@ -41,7 +56,6 @@ export class SeasonsComponent implements OnInit {
       result.map(
         item => {
           this.season.push(new Seasons(item));
-          this.getEpisodes(this.season.id);
         }
       );
 
@@ -50,10 +64,10 @@ export class SeasonsComponent implements OnInit {
 
   getEpisodes(seasonId): void {
     this.mazeApi.getEpisodes(seasonId).subscribe((result) => {
-      this.episode = [];
+      this.episodes = [];
       result.map(
         item => {
-          this.episode.push(new Episodes(item));
+          this.episodes.push(new Episodes(item));
           // console.log(this.episode[0]);
         }
       );
@@ -61,6 +75,10 @@ export class SeasonsComponent implements OnInit {
     });
   }
 
-
-
 }
+
+
+
+
+
+

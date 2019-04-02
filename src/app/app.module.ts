@@ -27,6 +27,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { SeasonsComponent } from './views/seasons/seasons.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { SeasonsComponent } from './views/seasons/seasons.component';
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,47 +1,30 @@
+<mat-card class="example-card" *ngFor="let sh of show">
+  <mat-card-header>
+    <div mat-card-avatar *ngIf="sh.image" [style.background]="'url(' + sh.image + ')'" ></div>
+    <mat-card-title>{{sh.name}}</mat-card-title>
+    <mat-card-subtitle>Started: {{sh.premiered}} | status: {{sh.status}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p [innerHTML]="sh.summary">
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<!--<app-episodes></app-episodes>-->
 <mat-accordion>
   <mat-expansion-panel *ngFor="let s of season">
     <mat-expansion-panel-header>
       <mat-panel-title>
         <span>Season: {{s.number}}</span>
       </mat-panel-title>
-
-
-
-
-
     </mat-expansion-panel-header>
 
-<ng-template matExpansionPanelContent>
-    <table mat-table [dataSource]="episode" class="mat-elevation-z8">
-
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="#">
-        <th mat-header-cell *matHeaderCellDef> # </th>
-        <td mat-cell *matCellDef="let ep"> {{ep.number}} </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="Name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let ep"> {{ep.name}} </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="Aired">
-        <th mat-header-cell *matHeaderCellDef> Aired </th>
-        <td mat-cell *matCellDef="let ep"> {{ep.airdate}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-</ng-template>
-
-
+    <ng-template matExpansionPanelContent><app-episodes [id]="s.id"></app-episodes></ng-template>
 
   </mat-expansion-panel>
 </mat-accordion>
+
+
+
+
