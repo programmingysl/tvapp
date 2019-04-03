@@ -1,5 +1,6 @@
 export class Episodes {
 
+  // properties
   id: number;
   url: string;
   name: string;
@@ -12,7 +13,7 @@ export class Episodes {
   image: any;
   links: string;
 
-
+ // args is the JSON object containing properties ; the same ones as listed here to assign to them (from json properties to local class properties)
   constructor(args?) {
     this.id = args.id;
     this.url = args.url;
@@ -24,7 +25,7 @@ export class Episodes {
     this.runtime = args.runtime;
     this.image = (args.image) ? args.image.medium : null;
     this.summary = args.summary;
-    this.summary = this.summary as HTMLInputElement;
+    this.summary = this.summary as HTMLInputElement; // tried something for innerHTML tooltip but not succesful
     this.links = (args._links)  ? args._links.self.href : null;
   }
 

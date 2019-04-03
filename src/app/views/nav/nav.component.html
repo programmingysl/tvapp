@@ -7,12 +7,15 @@
 
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Search Shows" [(ngModel)]="showName">
-      <button mat-button *ngIf="showName" matSuffix mat-icon-button aria-label="Clear" (click)="showName=''">
+      <input matInput type="text" placeholder="Search Shows" [(ngModel)]="showName"><!-- binding value of input to var: showName to make it accessible to my service as an argument to fetch the API-->
+      <button mat-button *ngIf="showName" matSuffix mat-icon-button aria-label="Clear" (click)="showName=''"><!-- clear value on click event if (*NgIf) value is not empty -->
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
   <button mat-flat-button color="accent" (click)="onSubmit()"><mat-icon>search</mat-icon></button>
+  <!-- calls an onSubmit function that routes to the shows component and passing the show name var -->
+
+
   <!--<button mat-flat-button color="accent" routerLink="/shows/{{showName}}"><mat-icon>search</mat-icon></button>-->
 
 

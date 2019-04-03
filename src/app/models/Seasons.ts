@@ -1,7 +1,7 @@
 import {Episodes} from './Episodes';
 
 export class Seasons {
-
+ // properties
   id: number;
   url: string;
   name: string;
@@ -14,7 +14,7 @@ export class Seasons {
   links: string;
   episodes: Episodes;
 
-
+  // this refers to item in the seasons component and we are assigning to the class properties
   constructor(args?) {
     this.id = args.id;
     this.url = args.url;

@@ -33,36 +33,10 @@ export class EpisodesComponent implements OnInit {
 
   ngOnInit() {
 
-      /*this.route.paramMap.subscribe(params => {
-      this.showId = params.get('showId');*/
-      this.route.paramMap.forEach(param => { this.showId = param.get('showId'); } );
-
-      this.getSeasons();
+    this.getEpisodes(this.id);
 
   }
-
-  getSeasons(): void {
-    this.mazeApi.getSeasons(this.showId).subscribe((result) => {
-      this.season = [];
-
-      result.map(
-        item => {
-
-          this.season.push(new Seasons(item));
-          // this.seasonId = item.id;
-
-          this.getEpisodes(this.id);
-
-        }
-      );
-      /* this.getEpisodes(this.seasonId);*/
-    }
-
-    );
-
-    console.log('season id: ' + this.mazeApi.seasonId);
-  }
-
+// fetching episodes through the service using variable id decorator from seasons to episodes component
   getEpisodes(seasonId): void {
     this.mazeApi.getEpisodes(seasonId).subscribe((result) => {
       this.episode = [];
@@ -77,38 +51,3 @@ export class EpisodesComponent implements OnInit {
   }
 
 }
-
-
-
-
-  /*
-  getEpisodes(seasonId): void {
-    this.mazeApi.getEpisodes(seasonId).subscribe((result) => {
-      this.episode = [];
-      result.map(
-        item => {
-          this.episode.push(new Episodes(item));
-           console.log(this.episode[0]);
-        }
-      );
-
-    });
-  }
-
-
-
-
-  getEpisodes(): void {
-    this.mazeApi.getEpisodes().subscribe((result) => {
-      this.episode = [];
-      result.map(
-        item => {
-          this.episode.push(new Episodes(item));
-         // console.log(this.episode[0]);
-        }
-      );
-
-    });
-  }
-
-*/

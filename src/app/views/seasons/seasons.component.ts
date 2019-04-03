@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Shows} from '../../models/Shows';
 import {Episodes} from '../../models/Episodes';
 import {Seasons} from '../../models/Seasons';
-import {EpisodesComponent} from '../episodes/episodes.component';
+
 
 @Component({
   selector: 'app-seasons',
@@ -15,11 +15,10 @@ export class SeasonsComponent implements OnInit {
 
 
   showId: string;
-  show: Shows[];
-  season: Seasons [];
+  show: Shows[]; // holds an array of shows of type Shows class
+  season: Seasons []; // holds an array of shows of type Shows class
   episodes: Episodes [];
-  seasonId: number[];
-  displayedColumns: string[] = ['#', 'Name', 'Aired'];
+
 
   constructor(private mazeApi: TvapiService, private route: ActivatedRoute ) {}
 

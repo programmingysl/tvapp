@@ -9,7 +9,7 @@ import { NavComponent} from './views/nav/nav.component';
 import {SeasonsComponent} from './views/seasons/seasons.component';
 
 const routes: Routes = [
-
+// includes all routes to different components
   { path: 'shows/:showName', component: ShowsComponent },
   { path: 'seasons/:showId', component: SeasonsComponent },
   { path: '', component: HomeComponent },

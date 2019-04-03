@@ -1,7 +1,7 @@
 import {Episodes} from './Episodes';
 
 export class Shows {
-
+ // properties
   id: number;
   name: string;
   runtime: number;
@@ -19,7 +19,7 @@ export class Shows {
 
 
     if (args) {
-
+    // this refers to item.show in the shows component and we are assigning to the class properties
       this.id = args.id;
       this.name = args.name;
       this.premiered = args.premiered;
