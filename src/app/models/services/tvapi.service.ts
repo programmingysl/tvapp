@@ -8,7 +8,7 @@ import {Observable, of} from 'rxjs';
 })
 export class TvapiService {
 
-  baseurl = 'http://api.tvmaze.com/';
+  baseurl = 'https://api.tvmaze.com/';
   seasonId: number;
 
  // dependency injection of the http client in order to return an accessible JSON object (not a string) when we get the api url

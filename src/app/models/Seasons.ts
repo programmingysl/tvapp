@@ -24,6 +24,13 @@ export class Seasons {
     this.premierDate = args.premierDate;
     this.endDate = args.endDate;
     this.image = (args.image) ? args.image.medium : null;
+
+    if (this.image) {
+
+      this.image = 'https' + this.image.substring(4);
+    }
+
+
     this.summary = args.summary;
     this.links = (args._links)  ? args._links.self.href : null;
   }

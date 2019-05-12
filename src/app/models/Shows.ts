@@ -26,11 +26,16 @@ export class Shows {
       this.status = args.status;
       this.image = (args.image) ? args.image.medium : null;
 
+      if (this.image) {
+
+        this.image = 'https' + this.image.substring(4);
+      }
+
 
       this.summary = args.summary;
 
-       this.prevEpUrl = (args._links.previousepisode) ?  args._links.previousepisode.href : null;
-       this.nextEpUrl = (args._links.nextepisode) ? args._links.nextepisode.href : null;
+      this.prevEpUrl = (args._links.previousepisode) ?  args._links.previousepisode.href : null;
+      this.nextEpUrl = (args._links.nextepisode) ? args._links.nextepisode.href : null;
     }
   }
 
